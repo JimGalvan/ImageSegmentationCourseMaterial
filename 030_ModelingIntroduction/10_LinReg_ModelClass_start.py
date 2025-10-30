@@ -33,22 +33,17 @@ class LinearRegressionTorch(nn.Module):
     def forward(self, x):
         return self.linear(x)
 
-
+#%%
 input_dim = 1
 output_dim = 1
 model = LinearRegressionTorch(input_dim, output_dim)
-
-
-# %% Loss Function
+# Loss Function
 loss_fun = nn.MSELoss()
-
-# %% Optimizer
+# Optimizer
 LR = 0.02
 optimizer = torch.optim.SGD(model.parameters(), lr=LR)
-
-# %% Training loop
 losses, slope, bias = [], [], []
-NUM_EPOCHS = 1000
+NUM_EPOCHS = 1200
 
 for epoch in range(NUM_EPOCHS):
     # set gradients to zero
